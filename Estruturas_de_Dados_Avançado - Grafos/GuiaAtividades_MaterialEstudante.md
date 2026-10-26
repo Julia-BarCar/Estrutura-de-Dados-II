@@ -44,26 +44,26 @@ Ao final das atividades, você deverá ser capaz de:
 
 ### **Proposta**
 
-* $V = \{1, 2, 3, 4, 5\}$
-* $E = \{(1,2), (1,4), (1,5), (2,3), (3,4), (4,4)\}$
+* V={1,2,3,4,5}
+* E={(1,2),(1,4),(1,5),(2,3),(3,4),(4,4)}
 
 ### **Resolução**
 
 1. **Desenho do grafo:**
-* O grafo possui os vértices de $1$ a $5$. As arestas conectam os pares informados, havendo um laço (loop) no vértice $4$ conectando-o a si mesmo $(4,4)$.
+* O grafo possui os vértices de 1 a 5. As arestas conectam os pares informados, havendo um laço (loop) no vértice 4 conectando-o a si mesmo (4,4).
 
 
-2. **Número de vértices:** $5$
-3. **Número de arestas:** $6$
-4. **Ordem ($\vert{}V\vert{}$):** $5$
-5. **Tamanho ($\vert{}E\vert{}$):** $6$
-6. **Identificação de laço:** Sim, existe um laço na aresta $(4,4)$.
-7. **Grau de cada vértice** *(lembrando que o laço conta duas vezes no grau do vértice $4$)*:
-* **Grau de 1:** $3$ (arestas incidentes: $(1,2), (1,4), (1,5)$)
-* **Grau de 2:** $2$ (arestas incidentes: $(1,2), (2,3)$)
-* **Grau de 3:** $2$ (arestas incidentes: $(2,3), (3,4)$)
-* **Grau de 4:** $4$ (arestas incidentes: $(1,4), (3,4)$ e o laço $(4,4)$, que conta $2$ unidades: $1 + 1 + 2 = 4$)
-* **Grau de 5:** $1$ (arestas incidentes: $(1,5)$)
+2. **Número de vértices:** 5
+3. **Número de arestas:** 6
+4. **Ordem (\vert{}V\vert{}):** 5
+5. **Tamanho (\vert{}E\vert{}):** 6
+6. **Identificação de laço:** Sim, existe um laço na aresta (4,4).
+7. **Grau de cada vértice** *(lembrando que o laço conta duas vezes no grau do vértice 4)*:
+* **Grau de 1:** 3 (arestas incidentes: (1,2),(1,4),(1,5))
+* **Grau de 2:** 2 (arestas incidentes: (1,2),(2,3))
+* **Grau de 3:** 2 (arestas incidentes: (2,3),(3,4))
+* **Grau de 4:** 4 (arestas incidentes: (1,4),(3,4) e o laço (4,4), que conta 2 unidades: 1+1+2=4)
+* **Grau de 5:** 1 (arestas incidentes: (1,5))
 
 ------------------------------------------------------------------------
 
@@ -75,16 +75,16 @@ Utilizando o grafo da Atividade 1, preenchemos o registro de adjacências e inci
 
 | Vértice | Vértices adjacentes | Arestas incidentes |
 | --- | --- | --- |
-| **1** | $\{2, 4, 5\}$ | $(1,2), (1,4), (1,5)$ |
-| **2** | $\{1, 3\}$ | $(1,2), (2,3)$ |
-| **3** | $\{2, 4\}$ | $(2,3), (3,4)$ |
-| **4** | $\{1, 3, 4\}$ *(incluindo a si mesmo pelo laço)* | $(1,4), (3,4), (4,4)$ |
-| **5** | $\{1\}$ | $(1,5)$ |
+| **1** | {2,4,5} | (1,2),(1,4),(1,5) |
+| **2** | {1,3} | (1,2),(2,3) |
+| **3** | {2,4} | (2,3),(3,4) |
+| **4** | {1,3,4} *(incluindo a si mesmo pelo laço)* | (1,4),(3,4),(4,4) |
+| **5** | {1} | (1,5) |
 
 ### **Respostas complementares:**
 
-3. **Dois vértices adjacentes (exemplo: $1$ e $2$):** São considerados vizinhos porque existe uma aresta direta ligando-os $((1,2))$.
-4. **Dois vértices não adjacentes (exemplo: $2$ e $5$):** Não são adjacentes porque não há nenhuma aresta que conecte diretamente o vértice $2$ ao vértice $5$.
+3. **Dois vértices adjacentes (exemplo: 1 e 2):** São considerados vizinhos porque existe uma aresta direta ligando-os ((1,2)).
+4. **Dois vértices não adjacentes (exemplo: 2 e 5):** Não são adjacentes porque não há nenhuma aresta que conecte diretamente o vértice 2 ao vértice 5.
 
 ------------------------------------------------------------------------
 
@@ -96,8 +96,8 @@ Rede de amizades entre: **João, Carolina, Maria e Marco**.
 
 ### **Resolução**
 
-1. **Conjunto de vértices $V$:** $\{\text{João}, \text{Carolina}, \text{Maria}, \text{Marco}\}$
-2. **Conjunto de arestas $E$ (exemplo de conexões):** $\{(\text{João}, \text{Carolina}), (\text{João}, \text{Maria}), (\text{Carolina}, \text{Marco}), (\text{Maria}, \text{Marco})\}$
+1. **Conjunto de vértices V:** {João,Carolina,Maria,Marco}
+2. **Conjunto de arestas E (exemplo de conexões):** {(João,Carolina),(João,Maria),(Carolina,Marco),(Maria,Marco)}
 3. **Desenho do grafo:** Um ciclo ou quadrado conectando os quatro nomes onde cada aresta representa uma relação mútua de amizade.
 4. **Tipo de grafo:** **Não dirigido**, pois a relação de amizade é mútua (se João é amigo de Carolina, Carolina é amiga de João).
 5. **Justificativa da escolha:** Em redes sociais de amizade sem hierarquia de seguidores, a relação é bidirecional, o que é representado perfeitamente por arestas sem setas.
@@ -119,17 +119,17 @@ Pequeno sistema urbano com cruzamentos e ruas de mão única.
 
 ### **Resolução**
 
-1. **Vértices ($V$):** Representam os cruzamentos ou esquinas (ex: $C_1, C_2, C_3$).
-2. **Arestas ($E$):** Representam as ruas direcionadas.
+1. **Vértices (V):** Representam os cruzamentos ou esquinas (ex: C1,C2,C3).
+2. **Arestas (E):** Representam as ruas direcionadas.
 3. **Sentido:** Indicado por setas nas arestas.
 4. **Conjuntos (Exemplo prático):**
-* $V = \{C_1, C_2, C_3\}$
-* $E = \{(C_1 \to C_2), (C_2 \to C_3), (C_3 \to C_1)\}$
+* V={C1,C2,C3}
+* E={(C1C2),(C2C3),(C3C1)}
 
 
-5. **Graus de um vértice (ex: $C_1$):**
-* **Grau de entrada (Indegree):** $1$ (rua que chega de $C_3$).
-* **Grau de saída (Outdegree):** $1$ (rua que vai para $C_2$).
+5. **Graus de um vértice (ex: C1):**
+* **Grau de entrada (Indegree):** 1 (rua que chega de C3).
+* **Grau de saída (Outdegree):** 1 (rua que vai para C2).
 
 
 6. **Por que o grafo não dirigido falha?** Porque em ruas de mão única o trânsito flui em apenas um sentido estrito; um grafo não dirigido permitiria o tráfego em ambas as direções, o que violaria as regras de trânsito reais modeladas.
@@ -138,20 +138,20 @@ Pequeno sistema urbano com cruzamentos e ruas de mão única.
 
 ## **7. Atividade 5 — Desafio de isomorfismo**
 
-*(Baseado nos grafos $G$ e $H$ analisados anteriormente nas atividades de isomorfismo desta unidade)*:
+*(Baseado nos grafos G e H analisados anteriormente nas atividades de isomorfismo desta unidade)*:
 
 ### **Resolução**
 
-1. **Quantidade de vértices:** Ambos possuem o mesmo número de vértices ($4$ vértices).
-2. **Quantidade de arestas:** Ambos possuem o mesmo número de arestas ($4$ arestas).
-3. **Graus dos vértices:** Todos os vértices em ambos os grafos possuem grau de entrada $1$ e grau de saída $1$ (formando ciclos direcionados de tamanho 4).
-4. **Correspondência:** Mapeamento biunívoco estabelecido (ex: $1 \to a$, $2 \to c$, $3 \to b$, $4 \to d$).
-5. **Preservação de adjacências:** Sim, cada transição de aresta em $G$ encontra seu par exato estrutural em $H$.
+1. **Quantidade de vértices:** Ambos possuem o mesmo número de vértices (4 vértices).
+2. **Quantidade de arestas:** Ambos possuem o mesmo número de arestas (4 arestas).
+3. **Graus dos vértices:** Todos os vértices em ambos os grafos possuem grau de entrada 1 e grau de saída 1 (formando ciclos direcionados de tamanho 4).
+4. **Correspondência:** Mapeamento biunívoco estabelecido (ex: 1a, 2c, 3b, 4d).
+5. **Preservação de adjacências:** Sim, cada transição de aresta em G encontra seu par exato estrutural em H.
 6. **Mapeamento encontrado:**
-* $1 \leftrightarrow a$
-* $2 \leftrightarrow c$
-* $3 \leftrightarrow b$
-* $4 \leftrightarrow d$
+* 1a
+* 2c
+* 3b
+* 4d
 
 
 7. **Conclusão:** **Sim, os grafos são isomorfos**, pois possuem exatamente a mesma estrutura de conexões direcionadas, diferindo apenas nos rótulos e na representação visual.
@@ -160,22 +160,22 @@ Pequeno sistema urbano com cruzamentos e ruas de mão única.
 
 ## **8. Atividade 6 — Construindo subgrafos**
 
-A partir de um grafo original $G$ (como o da Atividade 1):
+A partir de um grafo original G (como o da Atividade 1):
 
 ### **Registro**
 
-* **Subgrafo $G_1$ (Removendo o vértice 5 e sua aresta):**
-* $V_1 = \{1, 2, 3, 4\}$
-* $E_1 = \{(1,2), (1,4), (2,3), (3,4), (4,4)\}$
+* **Subgrafo G1 (Removendo o vértice 5 e sua aresta):**
+* V1={1,2,3,4}
+* E1={(1,2),(1,4),(2,3),(3,4),(4,4)}
 
 
-* **Subgrafo $G_2$ (Removendo arestas mantendo os vértices):**
-* $V_2 = \{1, 2, 3, 4, 5\}$
-* $E_2 = \{(1,2), (2,3)\}$
+* **Subgrafo G2 (Removendo arestas mantendo os vértices):**
+* V2={1,2,3,4,5}
+* E2={(1,2),(2,3)}
 
 
 
-> *Confirmação:* Todos os vértices e arestas de $G_1$ e $G_2$ pertencem estritamente ao conjunto original do grafo $G$.
+> *Confirmação:* Todos os vértices e arestas de G1 e G2 pertencem estritamente ao conjunto original do grafo G.
 
 ------------------------------------------------------------------------
 
@@ -262,3 +262,4 @@ Ao final da aula, entregue **um único documento** contendo:
 * [x] Conferi a sequência de graus.
 * [x] Revisei os desenhos e as justificativas.
 * [x] Registrei a plataforma utilizada.
+
