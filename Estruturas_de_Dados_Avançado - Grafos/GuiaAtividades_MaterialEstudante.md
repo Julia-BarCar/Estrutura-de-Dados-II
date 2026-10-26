@@ -1,5 +1,3 @@
-# **Material do Estudante - Prática de Grafos**
-
 # Material do Estudante - Prática de Grafos
 
 **Disciplina:** Estrutura de Dados II\
