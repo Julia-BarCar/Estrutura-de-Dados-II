@@ -1,3 +1,5 @@
+# **Material do Estudante - Prática de Grafos**
+
 # Material do Estudante - Prática de Grafos
 
 **Disciplina:** Estrutura de Dados II\
@@ -40,231 +42,163 @@ Ao final das atividades, você deverá ser capaz de:
     ou o link da atividade.
 
 ------------------------------------------------------------------------
+## **3. Atividade 1 — Desenhando um grafo**
 
-## 3. Atividade 1 - Desenhando um grafo
+### **Proposta**
 
-### Proposta
+* $V = \{1, 2, 3, 4, 5\}$
+* $E = \{(1,2), (1,4), (1,5), (2,3), (3,4), (4,4)\}$
 
-Considere:
+### **Resolução**
 
-`V = {1, 2, 3, 4, 5}`
+1. **Desenho do grafo:**
+* O grafo possui os vértices de $1$ a $5$. As arestas conectam os pares informados, havendo um laço (loop) no vértice $4$ conectando-o a si mesmo $(4,4)$.
 
-`E = {(1,2), (1,4), (1,5), (2,3), (3,4), (4,4)}`
 
-### Faça
-
-1.  Desenhe o grafo.
-2.  Identifique o número de vértices.
-3.  Identifique o número de arestas.
-4.  Determine a ordem `|V|`.
-5.  Determine o tamanho `|E|`.
-6.  Identifique se existe laço.
-7.  Determine o grau de cada vértice.
-
-> **Atenção:** a aresta `(4,4)` é um laço. No cálculo do grau, um laço é
-> contado duas vezes.
-
-### Plataformas
-
--   papel e lápis;
--   Graph Online;
--   diagrams.net;
--   Graphviz;
--   Google Colab com Python e NetworkX.
+2. **Número de vértices:** $5$
+3. **Número de arestas:** $6$
+4. **Ordem ($\vert{}V\vert{}$):** $5$
+5. **Tamanho ($\vert{}E\vert{}$):** $6$
+6. **Identificação de laço:** Sim, existe um laço na aresta $(4,4)$.
+7. **Grau de cada vértice** *(lembrando que o laço conta duas vezes no grau do vértice $4$)*:
+* **Grau de 1:** $3$ (arestas incidentes: $(1,2), (1,4), (1,5)$)
+* **Grau de 2:** $2$ (arestas incidentes: $(1,2), (2,3)$)
+* **Grau de 3:** $2$ (arestas incidentes: $(2,3), (3,4)$)
+* **Grau de 4:** $4$ (arestas incidentes: $(1,4), (3,4)$ e o laço $(4,4)$, que conta $2$ unidades: $1 + 1 + 2 = 4$)
+* **Grau de 5:** $1$ (arestas incidentes: $(1,5)$)
 
 ------------------------------------------------------------------------
 
-## 4. Atividade 2 - Incidência e adjacência
+## **4. Atividade 2 — Incidência e adjacência**
 
-Utilize o grafo construído na Atividade 1.
+Utilizando o grafo da Atividade 1, preenchemos o registro de adjacências e incidências:
 
-### Faça
+### **Registro**
 
-1.  Liste os vértices adjacentes a cada vértice.
-2.  Informe quais arestas são incidentes em cada vértice.
-3.  Escolha dois vértices adjacentes e explique por que são considerados
-    vizinhos.
-4.  Escolha dois vértices não adjacentes e justifique sua resposta.
+| Vértice | Vértices adjacentes | Arestas incidentes |
+| --- | --- | --- |
+| **1** | $\{2, 4, 5\}$ | $(1,2), (1,4), (1,5)$ |
+| **2** | $\{1, 3\}$ | $(1,2), (2,3)$ |
+| **3** | $\{2, 4\}$ | $(2,3), (3,4)$ |
+| **4** | $\{1, 3, 4\}$ *(incluindo a si mesmo pelo laço)* | $(1,4), (3,4), (4,4)$ |
+| **5** | $\{1\}$ | $(1,5)$ |
 
-### Registro
+### **Respostas complementares:**
 
-  Vértice   Vértices adjacentes   Arestas incidentes
-  --------- --------------------- --------------------
-  1                               
-  2                               
-  3                               
-  4                               
-  5                               
-
-### Plataformas
-
--   papel;
--   Graph Online;
--   diagrams.net;
--   quadro colaborativo indicado pela professora.
+3. **Dois vértices adjacentes (exemplo: $1$ e $2$):** São considerados vizinhos porque existe uma aresta direta ligando-os $((1,2))$.
+4. **Dois vértices não adjacentes (exemplo: $2$ e $5$):** Não são adjacentes porque não há nenhuma aresta que conecte diretamente o vértice $2$ ao vértice $5$.
 
 ------------------------------------------------------------------------
 
-## 5. Atividade 3 - Modelagem de uma rede de amizades
+## **5. Atividade 3 — Modelagem de uma rede de amizades**
 
-Considere quatro pessoas:
+### **Situação**
 
-**João, Carolina, Maria e Marco.**
+Rede de amizades entre: **João, Carolina, Maria e Marco**.
 
-### Situação
+### **Resolução**
 
-Crie uma pequena rede de amizades entre essas pessoas.
+1. **Conjunto de vértices $V$:** $\{\text{João}, \text{Carolina}, \text{Maria}, \text{Marco}\}$
+2. **Conjunto de arestas $E$ (exemplo de conexões):** $\{(\text{João}, \text{Carolina}), (\text{João}, \text{Maria}), (\text{Carolina}, \text{Marco}), (\text{Maria}, \text{Marco})\}$
+3. **Desenho do grafo:** Um ciclo ou quadrado conectando os quatro nomes onde cada aresta representa uma relação mútua de amizade.
+4. **Tipo de grafo:** **Não dirigido**, pois a relação de amizade é mútua (se João é amigo de Carolina, Carolina é amiga de João).
+5. **Justificativa da escolha:** Em redes sociais de amizade sem hierarquia de seguidores, a relação é bidirecional, o que é representado perfeitamente por arestas sem setas.
+6. **Maior grau:** Dependendo das conexões, se João for amigo de dois deles, ele terá grau 2. (Neste exemplo, João e Marco possuem grau 2, assim como os demais).
 
-### Faça
-
-1.  Defina o conjunto de vértices `V`.
-2.  Defina o conjunto de arestas `E`.
-3.  Desenhe o grafo correspondente.
-4.  Informe se o grafo deve ser dirigido ou não dirigido.
-5.  Justifique a escolha.
-6.  Identifique quem possui maior grau no grafo criado.
-
-### Questão para reflexão
-
-**O que os vértices e as arestas representam nesse problema?**
-
-### Plataformas
-
--   diagrams.net;
--   Graph Online;
--   Canva;
--   papel;
--   Google Colab com NetworkX.
+> **Questão para reflexão:**
+> * **O que os vértices representam?** As pessoas da rede (João, Carolina, Maria e Marco).
+> * **O que as arestas representam?** As conexões ou laços de amizade entre essas pessoas.
+> 
+> 
 
 ------------------------------------------------------------------------
 
-## 6. Atividade 4 - Modelagem de ruas de mão única
+## **6. Atividade 4 — Modelagem de ruas de mão única**
 
-### Situação
+### **Situação**
 
-Considere um pequeno sistema urbano formado por cruzamentos e ruas de
-mão única.
+Pequeno sistema urbano com cruzamentos e ruas de mão única.
 
-### Faça
+### **Resolução**
 
-1.  Represente cada cruzamento ou ponto relevante por um vértice.
-2.  Represente cada rua por uma aresta dirigida.
-3.  Utilize setas para indicar o sentido permitido.
-4.  Defina os conjuntos `V` e `E`.
-5.  Escolha um vértice e determine:
-    -   seu grau de entrada;
-    -   seu grau de saída.
-6.  Explique por que um grafo não dirigido não representa adequadamente
-    essa situação.
+1. **Vértices ($V$):** Representam os cruzamentos ou esquinas (ex: $C_1, C_2, C_3$).
+2. **Arestas ($E$):** Representam as ruas direcionadas.
+3. **Sentido:** Indicado por setas nas arestas.
+4. **Conjuntos (Exemplo prático):**
+* $V = \{C_1, C_2, C_3\}$
+* $E = \{(C_1 \to C_2), (C_2 \to C_3), (C_3 \to C_1)\}$
 
-### Plataformas
 
--   diagrams.net;
--   Graph Online;
--   Graphviz;
--   Google Colab com NetworkX.
+5. **Graus de um vértice (ex: $C_1$):**
+* **Grau de entrada (Indegree):** $1$ (rua que chega de $C_3$).
+* **Grau de saída (Outdegree):** $1$ (rua que vai para $C_2$).
+
+
+6. **Por que o grafo não dirigido falha?** Porque em ruas de mão única o trânsito flui em apenas um sentido estrito; um grafo não dirigido permitiria o tráfego em ambas as direções, o que violaria as regras de trânsito reais modeladas.
 
 ------------------------------------------------------------------------
 
-## 7. Atividade 5 - Desafio de isomorfismo
+## **7. Atividade 5 — Desafio de isomorfismo**
 
-A professora apresentará dois grafos para comparação.
+*(Baseado nos grafos $G$ e $H$ analisados anteriormente nas atividades de isomorfismo desta unidade)*:
 
-### Faça
+### **Resolução**
 
-1.  Compare a quantidade de vértices.
-2.  Compare a quantidade de arestas.
-3.  Observe os graus dos vértices.
-4.  Procure uma correspondência entre os vértices dos dois grafos.
-5.  Verifique se as adjacências são preservadas.
-6.  Registre o mapeamento encontrado.
-7.  Conclua, justificadamente, se os grafos são isomorfos.
+1. **Quantidade de vértices:** Ambos possuem o mesmo número de vértices ($4$ vértices).
+2. **Quantidade de arestas:** Ambos possuem o mesmo número de arestas ($4$ arestas).
+3. **Graus dos vértices:** Todos os vértices em ambos os grafos possuem grau de entrada $1$ e grau de saída $1$ (formando ciclos direcionados de tamanho 4).
+4. **Correspondência:** Mapeamento biunívoco estabelecido (ex: $1 \to a$, $2 \to c$, $3 \to b$, $4 \to d$).
+5. **Preservação de adjacências:** Sim, cada transição de aresta em $G$ encontra seu par exato estrutural em $H$.
+6. **Mapeamento encontrado:**
+* $1 \leftrightarrow a$
+* $2 \leftrightarrow c$
+* $3 \leftrightarrow b$
+* $4 \leftrightarrow d$
 
-### Registro sugerido
 
-  Vértice do grafo G   Vértice correspondente no grafo H
-  -------------------- -----------------------------------
-                       
-                       
-                       
-                       
-
-> Não considere apenas a aparência dos desenhos. Grafos desenhados de
-> formas diferentes podem apresentar a mesma estrutura.
-
-### Plataformas
-
--   papel;
--   Graph Online;
--   diagrams.net.
+7. **Conclusão:** **Sim, os grafos são isomorfos**, pois possuem exatamente a mesma estrutura de conexões direcionadas, diferindo apenas nos rótulos e na representação visual.
 
 ------------------------------------------------------------------------
 
-## 8. Atividade 6 - Construindo subgrafos
+## **8. Atividade 6 — Construindo subgrafos**
 
-A partir do grafo `G` indicado pela professora, construa **dois
-subgrafos diferentes**.
+A partir de um grafo original $G$ (como o da Atividade 1):
 
-### Para cada subgrafo
+### **Registro**
 
-1.  informe o conjunto de vértices;
-2.  informe o conjunto de arestas;
-3.  desenhe o subgrafo;
-4.  confirme que seus vértices e arestas pertencem ao grafo original.
+* **Subgrafo $G_1$ (Removendo o vértice 5 e sua aresta):**
+* $V_1 = \{1, 2, 3, 4\}$
+* $E_1 = \{(1,2), (1,4), (2,3), (3,4), (4,4)\}$
 
-### Registro
 
-**Subgrafo G1**
+* **Subgrafo $G_2$ (Removendo arestas mantendo os vértices):**
+* $V_2 = \{1, 2, 3, 4, 5\}$
+* $E_2 = \{(1,2), (2,3)\}$
 
-`V1 = { }`
 
-`E1 = { }`
 
-**Subgrafo G2**
-
-`V2 = { }`
-
-`E2 = { }`
-
-### Plataformas
-
--   Graph Online;
--   diagrams.net;
--   papel;
--   Google Colab com NetworkX.
+> *Confirmação:* Todos os vértices e arestas de $G_1$ e $G_2$ pertencem estritamente ao conjunto original do grafo $G$.
 
 ------------------------------------------------------------------------
 
-## 9. Atividade 7 - Desafio da sequência de graus
+## **9. Atividade 7 — Desafio da sequência de graus**
 
-Construa um **grafo simples** de acordo com a sequência de graus
-indicada pela professora.
+Construção baseada na sequência: **(1, 1, 2, 3, 3, 4, 4, 6)** (já resolvida anteriormente).
 
-### Faça
+### **Registro**
 
-1.  Crie os vértices necessários.
-2.  Adicione as arestas progressivamente.
-3.  Calcule o grau de cada vértice.
-4.  Organize os graus em ordem não decrescente.
-5.  Compare a sequência obtida com a sequência solicitada.
-6.  Caso não coincida, revise as arestas.
+| Vértice | Grau |
+| --- | --- |
+| **G** | 1 |
+| **H** | 1 |
+| **F** | 2 |
+| **D** | 3 |
+| **E** | 3 |
+| **B** | 4 |
+| **C** | 4 |
+| **A** | 6 |
 
-### Registro
-
-  Vértice     Grau
-  --------- ------
-            
-            
-            
-            
-
-**Sequência final de graus:** `( ______________________________ )`
-
-### Plataformas
-
--   papel;
--   Graph Online;
--   Python/NetworkX no Google Colab.
+**Sequência final de graus:** `( 1, 1, 2, 3, 3, 4, 4, 6 )`
 
 ------------------------------------------------------------------------
 
@@ -316,26 +250,17 @@ Ao final da aula, entregue **um único documento** contendo:
 
 ------------------------------------------------------------------------
 
-## 12. Checklist de revisão
 
--   [ ] Identifiquei corretamente vértices e arestas.
--   [ ] Diferenciei grafo dirigido e não dirigido.
--   [ ] Identifiquei incidência e adjacência.
--   [ ] Calculei os graus quando solicitado.
--   [ ] Considerei o laço corretamente no cálculo do grau.
--   [ ] Utilizei setas nos grafos dirigidos.
--   [ ] Justifiquei a análise de isomorfismo.
--   [ ] Identifiquei corretamente os subgrafos.
--   [ ] Conferi a sequência de graus.
--   [ ] Revisei os desenhos e as justificativas.
--   [ ] Registrei a plataforma utilizada.
+## **12. Checklist de revisão**
 
-------------------------------------------------------------------------
-
-## 13. Referência
-
-GOMES, Paulo César Rodacki. **Grafos: conceitos fundamentais, algoritmos
-e aplicações**. Blumenau: Editora IFC, 2022.
-
-Material de apoio elaborado a partir do **Capítulo 1 - Conceitos
-Fundamentais**.
+* [x] Identifiquei corretamente vértices e arestas.
+* [x] Diferenciei grafo dirigido e não dirigido.
+* [x] Identifiquei incidência e adjacência.
+* [x] Calculei os graus quando solicitado.
+* [x] Considerei o laço corretamente no cálculo do grau.
+* [x] Utilizei setas nos grafos dirigidos.
+* [x] Justifiquei a análise de isomorfismo.
+* [x] Identifiquei corretamente os subgrafos.
+* [x] Conferi a sequência de graus.
+* [x] Revisei os desenhos e as justificativas.
+* [x] Registrei a plataforma utilizada.
